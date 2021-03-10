@@ -6,16 +6,16 @@ def lambda_handler(event, context):
     client = boto3.client('emr',  region_name="eu-west-1")
 
     instances = {
-        'MasterInstanceType': 'm3.xlarge',
-        'SlaveInstanceType': 'm3.xlarge',
+        'MasterInstanceType': 'm5.xlarge',
+        'SlaveInstanceType': 'm5.xlarge',
         'InstanceCount': 2,
         'InstanceGroups': [],
-        'Ec2KeyName': 'spark',
+        'Ec2KeyName': 'test',
         'KeepJobFlowAliveWhenNoSteps': True,
         'TerminationProtected': False,
-        'Ec2SubnetId': 'subnet-b51b2fd3',
-        'EmrManagedMasterSecurityGroup': 'sg-00e712ec1b09f676e',
-        'EmrManagedSlaveSecurityGroup':  'sg-0e9ebbfd18d0669a8'
+        'Ec2SubnetId': 'subnet-11819b59',
+        'EmrManagedMasterSecurityGroup': 'sg-03ffe5a5d1e5135cc',
+        'EmrManagedSlaveSecurityGroup':  'sg-051e11d3c0c29d3ee'
     }
 
     configurations = [
@@ -41,7 +41,7 @@ def lambda_handler(event, context):
 
     response = client.run_job_flow(
         Name='PySpark Cluster',
-        LogUri='s3://aws-logs-788660014500-eu-west-1/emr-logs',
+        LogUri='s3://char-pract/logs',
         ReleaseLabel='emr-5.30.0',
         Instances=instances,
         Configurations=configurations,
