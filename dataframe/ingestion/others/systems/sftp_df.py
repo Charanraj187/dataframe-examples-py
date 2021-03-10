@@ -33,4 +33,6 @@ if __name__ == '__main__':
 
     ol_txn_df.show(5, False)
 
+    ol.txndf.coalesce(1).write.mode("overwrite").parquet("s3a://char-pract/receipt")
+
 # spark-submit --packages "com.springml:spark-sftp_2.11:1.1.1" dataframe/ingestion/others/systems/sftp_df.py
