@@ -10,12 +10,12 @@ def lambda_handler(event, context):
         'SlaveInstanceType': 'm5.xlarge',
         'InstanceCount': 2,
         'InstanceGroups': [],
-        'Ec2KeyName': 'test',
+        'Ec2KeyName': 'char',
         'KeepJobFlowAliveWhenNoSteps': True,
         'TerminationProtected': False,
-        'Ec2SubnetId': 'subnet-11819b59',
-        'EmrManagedMasterSecurityGroup': 'sg-03ffe5a5d1e5135cc',
-        'EmrManagedSlaveSecurityGroup':  'sg-051e11d3c0c29d3ee'
+        'Ec2SubnetId': 'subnet-0ecc9d54',
+        'EmrManagedMasterSecurityGroup': 'sg-095e3223bf548c1b7',
+        'EmrManagedSlaveSecurityGroup': 'sg-0b890a42986c04d7f'
     }
 
     configurations = [
@@ -40,8 +40,8 @@ def lambda_handler(event, context):
     ]
 
     response = client.run_job_flow(
-        Name='PySpark Cluster',
-        LogUri='s3://char-pract/logs',
+        Name='Charan_L_Cluster',
+        LogUri='s3://charan-1234/logs',
         ReleaseLabel='emr-5.30.0',
         Instances=instances,
         Configurations=configurations,
