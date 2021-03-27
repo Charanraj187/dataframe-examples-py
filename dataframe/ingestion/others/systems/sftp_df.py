@@ -32,6 +32,6 @@ if __name__ == '__main__':
         .load(app_conf["sftp_conf"]["directory"] + "/receipts_delta_GBR_14_10_2017.csv")
 
     ol_txn_df.show(5, False)
-    ol_txn_df.coalesce(1).write.mode("overwrite").parquet("s3a://char-pract/receipt")
+    ol_txn_df.coalesce(1).write.mode("overwrite").parquet("s3a://charan-1234/receipt")
 
 # spark-submit --packages "com.springml:spark-sftp_2.11:1.1.1" dataframe/ingestion/others/systems/sftp_df.py
