@@ -48,6 +48,6 @@ if __name__ == '__main__':
 
     txnDF.show()
 
-    txnDF.coalesce(1).write.mode("overwrite").parquet("s3a://char-pract/txn")
+    txnDF.coalesce(1).write.mode("overwrite").parquet("s3a://charan-1234/txn")
 
 # spark-submit --packages "mysql:mysql-connector-java:8.0.15" dataframe/ingestion/others/systems/mysql_df.py
