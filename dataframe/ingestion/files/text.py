@@ -43,7 +43,7 @@ if __name__ == '__main__':
         .option("delimiter", ",") \
         .format("csv") \
         .schema(crime_schema) \
-        .load("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/crime_dataset/xac.csv")
+        .load("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/xac.csv")
 
     crime_df.printSchema()
     crime_df.show()
@@ -55,7 +55,7 @@ if __name__ == '__main__':
         .option("header", "false") \
         .option("delimiter", ",") \
         .option("inferSchema", "true") \
-        .csv("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/crime_dataset/xac.csv") \
+        .csv("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/xac.csv") \
         .toDF("Id", "City_Name", "Crime_Name", "Damages", "Case_Code", "Year", "Case_Code")
 
     print("Number of partitions = " + str(crime_df.rdd.getNumPartitions()))
