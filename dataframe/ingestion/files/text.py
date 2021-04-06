@@ -34,9 +34,9 @@ if __name__ == '__main__':
         .add("City_Name", StringType(), True) \
         .add("Crime_Name", StringType(), True) \
         .add("Damages", StringType(), True) \
-        .add("Case_Code", IntegerType(), True) \
+        .add("No_Of_Case", IntegerType(), True) \
         .add("Year", IntegerType(), True) \
-        .add("Case_Code", IntegerType(), True)
+        .add("Total_Case", IntegerType(), True)
 
     crime_df = spark.read \
         .option("header", "false") \
@@ -56,7 +56,7 @@ if __name__ == '__main__':
         .option("delimiter", ",") \
         .option("inferSchema", "true") \
         .csv("s3a://" + app_conf["s3_conf"]["s3_bucket"] + "/crime_dataset/xac.csv") \
-        .toDF("Id", "City_Name", "Crime_Name", "Damages", "Case_Code", "Year", "Case_Code")
+        .toDF("Id", "City_Name", "Crime_Name", "Damages", "No_Of_Case", "Year", "Total_Case")
 
     print("Number of partitions = " + str(crime_df.rdd.getNumPartitions()))
     crime_report_df.printSchema()
