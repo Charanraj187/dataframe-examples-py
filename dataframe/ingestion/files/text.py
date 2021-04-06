@@ -30,7 +30,7 @@ if __name__ == '__main__':
     print("\nCreating dataframe ingestion CSV file using 'SparkSession.read.format()'")
 
     crime_schema = StructType() \
-        .add("Id", IntegerType(), True) \
+        .add("Id", StringType(), True) \
         .add("City_Name", StringType(), True) \
         .add("Crime_Name", StringType(), True) \
         .add("Damages", StringType(), True) \
