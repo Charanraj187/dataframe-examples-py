@@ -1,5 +1,5 @@
 s3_conf:
-  s3_bucket: cherry-buck
+  s3_bucket: kiranraj-buck
 
 sftp_conf:
     filetype: csv
@@ -7,9 +7,9 @@ sftp_conf:
     directory: /home/ubuntu/data
 
 mysql_conf:
-  dbtable: cherrydb.TRANSACTIONSYNC
+  dbtable: testdb.TRANSACTIONSYNC
   partition_column: App_Transaction_Id
-  query : "(select * from cherrydb.TRANSACTIONSYNC where Internal_Member_Id = 'PC7135361') as t"
+  query : "(select * from testdb.TRANSACTIONSYNC where Internal_Member_Id = 'PC7135361') as t"
 
 mongodb_config:
   database: school
