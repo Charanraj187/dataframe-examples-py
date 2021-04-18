@@ -30,7 +30,7 @@ if __name__ == '__main__':
                   "lowerBound": "1",
                   "upperBound": "100",
                   "dbtable": app_conf["mysql_conf"]["dbtable"],
-                  #"dbtable": app_conf["mysql_conf"]["query"],
+                  "dbtable": app_conf["mysql_conf"]["query"],
                   "numPartitions": "2",
                   "partitionColumn": app_conf["mysql_conf"]["partition_column"],
                   "user": app_secret["mysql_conf"]["username"],
