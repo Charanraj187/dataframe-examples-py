@@ -12,7 +12,7 @@ mysql_conf:
   query : "(select * from testdb.TRANSACTIONSYNC where Internal_Member_Id = 'PC7135361') as t"
 
 mongodb_config:
-  database: school
+  database: schools
   collection: students
 
 redshift_conf:
