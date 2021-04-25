@@ -10,7 +10,7 @@ if __name__ == '__main__':
          --packages "io.github.spark-redshift-community:spark-redshift_2.11:4.0.1,org.apache.spark:spark-avro_2.11:2.4.2,org.apache.hadoop:hadoop-aws:2.7.4" pyspark-shell'
     )
 
-    # Create the SparkSession
+    # Create the SparkSessions
     spark = SparkSession \
         .builder \
         .appName("Read ingestion enterprise applications") \
