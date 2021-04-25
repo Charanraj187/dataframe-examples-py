@@ -49,7 +49,7 @@ if __name__ == '__main__':
     txn_df.coalesce(1).write\
         .format("io.github.spark_redshift_community.spark.redshift") \
         .option("url", jdbc_url) \
-        .option("tempdir", "s3a://" + app_conf["s3_conf"]["s3_buckets"] + "staging/SB") \
+        .option("tempdir", "s3a://" + app_conf["s3_conf"]["s3_bucket"] + "staging/RD") \
         .option("forward_spark_s3_credentials", "true") \
         .option("dbtable", "PUBLIC.TXN_FCT") \
         .mode("overwrite")\
